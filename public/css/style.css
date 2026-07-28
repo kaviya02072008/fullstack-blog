@@ -6,19 +6,23 @@
 }
 
 body{
-    background:#f4f6f9;
+    background:#eef2f7;
     color:#333;
 }
 
 header{
+    display:flex;
+    justify-content: space-between;
     background:#2c3e50;
     color:white;
     padding:20px;
     text-align:center;
+    box-shadow:0 3px 8px rgba(0,0,0,.2);
 }
 
 header h2{
-    margin-bottom:10px;
+    margin-left: 150px ;
+    font-size: 32px;
 }
 
 nav{
@@ -29,20 +33,22 @@ nav a{
     color:white;
     text-decoration:none;
     font-size:18px;
-    margin:0 20px;
+    margin-left: 90px;
     font-weight:bold;
+    transition: 0.3s;
 }
 
 nav a:hover{
     color:#f1c40f;
+    text-decoration: underline;
 }
 
 main{
-    width:80%;
+    width:85%;
     margin:40px auto;
 }
 
-h1{
+main h1{
     text-align:center;
     margin-bottom:30px;
     color:#2c3e50;
@@ -50,10 +56,10 @@ h1{
 
 article{
     background:white;
-    padding:20px;
+    padding:25px;
     margin-bottom:25px;
-    border-radius:10px;
-    box-shadow:0px 4px 10px rgba(0,0,0,0.15);
+    border-radius:12px;
+    box-shadow:0px 5px 15px rgba(0,0,0,0.15);
 }
 
 article h2{
@@ -62,13 +68,21 @@ article h2{
 }
 
 article p{
-    margin-top:8px;
-    line-height:1.6;
+    margin-top:10px;
+    line-height:1.8;
+}
+form{
+    background:white;
+    width: 70%;
+    margin: auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
 }
 
 table{
-    width:70%;
-    margin:auto;
+    width:100%;
+    border-collapse: collapse;
 }
 
 td{
@@ -77,42 +91,46 @@ td{
 
 label{
     font-weight:bold;
+    color: #2c3e50;
 }
 
 input,
 select,
 textarea{
     width:100%;
-    padding:10px;
+    padding:12px;
     border:1px solid #bbb;
-    border-radius:5px;
-    font-size:15px;
+    border-radius:6px;
+    font-size:16px;
 }
 
 textarea{
     resize:vertical;
+    min-height: 120px;
 }
 button{
-    background:#2c3e50;
+    background:#3498db;
     color:white;
     border:none;
-    padding:10px 20px;
-    border-radius:5px;
+    padding:12px 25px;
+    border-radius:8px;
     cursor:pointer;
     font-size:16px;
     margin:5px;
+    transition: 3s;
 }
 
 button:hover{
-    background:#34495e;
+    background: #2980b9;
+    transform: scale(1.05);
 }
 
 footer{
     background:#2c3e50;
     color:white;
     text-align:center;
-    padding:18px;
-    margin-top:40px;
+    padding:20px;
+    margin-top:50px;
 }
 
 hr{
@@ -120,4 +138,29 @@ hr{
     height:1px;
     background:#ddd;
     margin:20px 0;
+}
+@media(max-width:786px){
+    main{
+        width:95%;
+    }
+    form{
+        width:100%;
+    }
+    nav a{
+        display:block;
+        margin:10px 0;
+    }
+    header h2{
+        font-size: 26px;
+    }
+}
+.button-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+.button-group button{
+    width: 130px;
 }
