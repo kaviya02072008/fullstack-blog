@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Blog</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <!--Navigation-->
     <header>
-    <h2>My Blog</h2>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="add-blog.html">Add Blog</a>
-    </nav>
-    <hr>
+        <h2>My Blog</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="add-blog.html">Add Blog</a>
+        </nav>
+        <hr>
     </header>
 
     <!--Form-->
     <main>
         <h1>Add Blog</h1>
-        <form>
+        <form id="blogForm">
             <table cellpadding="12" align="center">
                 <tr>
                     <td><label>Blog Title </label></td>
                     <td>
-                        <input type="text" placeholder="Enter blog Title">
+                        <input type="text" id="title" placeholder="Enter blog Title">
                     </td>
                 </tr>
                 <tr>
                     <td><label>Author</label></td>
                     <td>
-                        <input type="text" placeholder="Enter Author Name">
+                        <input type="text" id="author" placeholder="Enter Author Name">
                     </td>
                 </tr>
                 <tr>
                     <td><label>Category</label></td>
                     <td>
-                        <select>
+                        <select id="category">
+                            <option value="">Select Category</option>
                             <option value="Technology">Technology</option>
                             <option value="Education">Education</option>
                             <option value="Programming">Programming</option>
@@ -49,20 +52,20 @@
                 <tr>
                     <td><label>Published date</label></td>
                     <td>
-                        <input type="date">
+                        <input type="date" id="date">
                     </td>
                 </tr>
                 <tr>
                     <td><label>Blog Content</label></td>
                     <td>
-                        <textarea rows="6" cols="40" placeholder="write your blog here"></textarea>
+                        <textarea rows="6" cols="40" id="content" placeholder="write your blog here"></textarea>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
                         <div class="button-group">
-                        <button type="submit">Submit</button>
-                        <button type="reset">Clear</button>
+                            <button type="submit">Submit</button>
+                            <button type="reset">Clear</button>
                         </div>
                     </td>
                 </tr>
@@ -70,9 +73,10 @@
         </form>
     </main>
     <!--Footer-->
-            <footer>
-                <p>&copy; 2026 My Blog. All Rights Reserved</p>
-            </footer>
-
+    <footer>
+        <p>&copy; 2026 My Blog. All Rights Reserved</p>
+    </footer>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
