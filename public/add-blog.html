@@ -22,24 +22,24 @@
     <!--Form-->
     <main>
         <h1>Add Blog</h1>
-        <form id="blogForm">
+        <form action="/add-blog" method="POST" id="blogForm">
             <table cellpadding="12" align="center">
                 <tr>
                     <td><label>Blog Title </label></td>
                     <td>
-                        <input type="text" id="title" placeholder="Enter blog Title">
+                        <input type="text" id="title" name="title" placeholder="Enter blog Title">
                     </td>
                 </tr>
                 <tr>
                     <td><label>Author</label></td>
                     <td>
-                        <input type="text" id="author" placeholder="Enter Author Name">
+                        <input type="text" id="author" name="author" placeholder="Enter Author Name">
                     </td>
                 </tr>
                 <tr>
                     <td><label>Category</label></td>
                     <td>
-                        <select id="category">
+                        <select id="category" name="category">
                             <option value="">Select Category</option>
                             <option value="Technology">Technology</option>
                             <option value="Education">Education</option>
@@ -52,13 +52,13 @@
                 <tr>
                     <td><label>Published date</label></td>
                     <td>
-                        <input type="date" id="date">
+                        <input type="date" id="date" name="date">
                     </td>
                 </tr>
                 <tr>
                     <td><label>Blog Content</label></td>
                     <td>
-                        <textarea rows="6" cols="40" id="content" placeholder="write your blog here"></textarea>
+                        <textarea rows="6" cols="40" id="content" name="content" placeholder="write your blog here"></textarea>
                     </td>
                 </tr>
                 <tr>
