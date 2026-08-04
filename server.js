@@ -51,6 +51,36 @@ app.get("/blogs", (req, res) => {
     res.json(blogs);
 });
 
+// Edit Blog API
+app.put("/blogs/:id", (req, res) => {
+
+    const id = parseInt(req.params.id);
+
+    const { title, author, category, date, content } = req.body;
+
+    const blog = blogs.find(blog => blog.id === id);
+
+    if (!blog) {
+        return res.status(404).json({
+            message: "Blog not found"
+        });
+    }
+
+    blog.title = title;
+    blog.author = author;
+    blog.category = category;
+    blog.date = date;
+    blog.content = content;
+
+    console.log("Blog Updated Successfully");
+    console.log(blog);
+
+    res.json({
+        message: "Blog updated successfully!",
+        blog
+    });
+});
+
 // Start Server
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);

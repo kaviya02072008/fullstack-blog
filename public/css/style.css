@@ -188,6 +188,19 @@ hr{
     background:#ddd;
     margin:20px 0;
 }
+article button{
+    background:#27ae60;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:6px;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+article button:hover{
+    background:#1f8a4d;
+}
 
 /* Responsive */
 
