@@ -4,6 +4,9 @@ const path = require("path");
 const app = express();
 const PORT = 3000;
 
+// Store blogs in memory
+const blogs = [];
+
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -21,20 +24,31 @@ app.get("/add-blog", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "add-blog.html"));
 });
 
-// POST Route
+// Add Blog API
 app.post("/add-blog", (req, res) => {
 
-    console.log("========== BLOG DETAILS ==========");
+    const { title, author, category, date, content } = req.body;
 
-    console.log("Title :", req.body.title);
-    console.log("Author :", req.body.author);
-    console.log("Category :", req.body.category);
-    console.log("Published Date :", req.body.date);
-    console.log("Content :", req.body.content);
+    const newBlog = {
+        id: blogs.length + 1,
+        title,
+        author,
+        category,
+        date,
+        content
+    };
 
-    console.log("==================================");
+    blogs.push(newBlog);
+
+    console.log("New Blog Added");
+    console.log(newBlog);
 
     res.send("Blog added successfully!");
+});
+
+// Get All Blogs API
+app.get("/blogs", (req, res) => {
+    res.json(blogs);
 });
 
 // Start Server
