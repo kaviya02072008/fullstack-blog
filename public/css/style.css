@@ -201,6 +201,37 @@ article button{
 article button:hover{
     background:#1f8a4d;
 }
+.button-container{
+    display:flex;
+    gap:15px;
+    margin-top:20px;
+}
+
+.button-container button{
+    padding:10px 20px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.button-container button:first-child{
+    background:#27ae60;
+    color:white;
+}
+
+.button-container button:first-child:hover{
+    background:#1f8a4d;
+}
+
+.delete-btn{
+    background:#e74c3c;
+    color:white;
+}
+
+.delete-btn:hover{
+    background:#c0392b;
+}
 
 /* Responsive */
 

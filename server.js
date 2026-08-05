@@ -5,7 +5,7 @@ const app = express();
 const PORT = 3000;
 
 // Store blogs in memory
-const blogs = [];
+let blogs = [];
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -79,6 +79,30 @@ app.put("/blogs/:id", (req, res) => {
         message: "Blog updated successfully!",
         blog
     });
+
+});
+
+// Delete Blog API
+app.delete("/blogs/:id", (req, res) => {
+
+    const id = parseInt(req.params.id);
+
+    const blog = blogs.find(blog => blog.id === id);
+
+    if (!blog) {
+        return res.status(404).json({
+            message: "Blog not found"
+        });
+    }
+
+    blogs = blogs.filter(blog => blog.id !== id);
+
+    console.log("Blog Deleted Successfully");
+
+    res.json({
+        message: "Blog deleted successfully!"
+    });
+
 });
 
 // Start Server

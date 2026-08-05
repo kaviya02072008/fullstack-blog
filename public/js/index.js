@@ -26,7 +26,10 @@ fetch("/blogs")
 
             <p>${blog.content}</p>
 
-            <button onclick="editBlog(${blog.id})">Edit</button>
+            <div class="button-container">
+                <button onclick="editBlog(${blog.id})">Edit</button>
+                <button class="delete-btn" onclick="deleteBlog(${blog.id})">Delete</button>
+            </div>
         `;
 
         container.appendChild(article);
@@ -68,12 +71,34 @@ function editBlog(id){
             content
         })
     })
-    .then(response=>response.json())
-    .then(data=>{
+    .then(response => response.json())
+    .then(data => {
         alert(data.message);
         location.reload();
     })
-    .catch(error=>{
+    .catch(error => {
+        console.log(error);
+    });
+
+}
+
+function deleteBlog(id){
+
+    const confirmDelete = confirm("Are you sure you want to delete this blog?");
+
+    if(!confirmDelete){
+        return;
+    }
+
+    fetch(`/blogs/${id}`,{
+        method:"DELETE"
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+        location.reload();
+    })
+    .catch(error => {
         console.log(error);
     });
 
